@@ -1,10 +1,15 @@
 const app = require("express").Router();
 const clientModel = require("../model/client.model");
 
+
+app.get('/clients', async (req, res) => {
+  let allData = await clientModel.find()
+  res.json({allData})
+});
+
 app.post("/addClient", async (req, res) => {
   let { clientName, logo, cover } = req.body;
   let data = await clientModel.findOne({ name: clientName });
-  console.log(data);
 
     if (!data) {
       //true statment

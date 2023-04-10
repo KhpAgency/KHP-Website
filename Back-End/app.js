@@ -47,7 +47,7 @@ mongoose.connect("mongodb+srv://admin:07775666@magdy.pbupj.mongodb.net/KHP", {
 });
 
 
-app.use(require('./routes/addClient.route'));
+app.use(require('./routes/client.route'));
 
 
 
