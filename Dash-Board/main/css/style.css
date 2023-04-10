@@ -1664,7 +1664,7 @@ svg.pulse-svg .third-circle {
 }
 
 .nav-header .brand-logo a b img {
-  max-width: 25px;
+  max-width: 100px;
 }
 
 .nav-header .brand-logo a span {
@@ -1919,7 +1919,8 @@ svg.pulse-svg .third-circle {
   }
 
   .mini-nav .nav-header .brand-logo b img {
-    margin-top: 7px;
+    margin-top: 10px;
+    max-width: 50px;
   }
 
   .mini-nav .nav-header .brand-title {
@@ -2070,6 +2071,14 @@ svg.pulse-svg .third-circle {
   .content-body {
     margin-left: 0px;
     padding-top: 60px;
+  }
+  .mini-nav .nav-header .brand-logo b img {
+    margin-top: 10px;
+    max-width: 50px;
+  }
+  .nav-header .brand-logo a b img {
+    margin-top: 10px;
+    max-width: 50px;
   }
 }
 
