@@ -7,4 +7,4 @@ const clientSchema = mongoose.Schema ({
     
 })
 
-module.exports = mongoose.Schema('client', clientSchema)
+module.exports = mongoose.model('client', clientSchema)
