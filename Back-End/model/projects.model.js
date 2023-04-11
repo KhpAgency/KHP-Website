@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 
 const projectsSchema = mongoose.Schema ({
-    clientName: String,
+    name: String,
+    clientID : mongoose.Schema.Types.ObjectId,
     branding: Array,
     profile: Array,
     
