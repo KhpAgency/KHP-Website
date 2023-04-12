@@ -29,18 +29,21 @@ function fileFilter(req, file, cb) {
 }
 
 const upload = multer({dest: 'uploads', storage, fileFilter})
+
 app.use(
   upload.fields([
     { name: 'logo', maxCount: 1 },
     { name: 'cover', maxCount: 1 },
   ])
 );
+
+
 // app.use(
-//   upload.fields([
+//   upload.array([
 //     { name: 'branding'},
 //     { name: 'profile'},
 //   ])
-// );
+//   );
 
 
 // app.use(upload.array('branding'))
