@@ -28,17 +28,28 @@ function fileFilter(req, file, cb) {
   }
 }
 
-// app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-const upload = multer({ dest: 'uploads', storage, fileFilter });
-
-
+const upload = multer({dest: 'uploads', storage, fileFilter})
 app.use(
   upload.fields([
     { name: 'logo', maxCount: 1 },
     { name: 'cover', maxCount: 1 },
   ])
 );
+// app.use(
+//   upload.fields([
+//     { name: 'branding'},
+//     { name: 'profile'},
+//   ])
+// );
+
+
+// app.use(upload.array('branding'))
+// app.use(upload.array('profile'))
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
 
 
 mongoose.connect("mongodb+srv://admin:07775666@magdy.pbupj.mongodb.net/KHP", {
@@ -48,6 +59,7 @@ mongoose.connect("mongodb+srv://admin:07775666@magdy.pbupj.mongodb.net/KHP", {
 
 
 app.use(require('./routes/client.route'));
+app.use(require('./routes/projects.route'));
 
 
 
