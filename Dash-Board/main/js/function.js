@@ -6,25 +6,14 @@ form.addEventListener('submit', function (event) {
 
 
 function collectFormData() {
-  // const form = document.querySelector('form');
+  const form = document.querySelector('form');
   const formData = new FormData(form);
   const clientName = formData.get('clientName');
   const logo = formData.get('logo');
   const cover = formData.get('cover');
 
-  // Get the file paths of the uploaded files
-  const logoPath = logo ? logo.name : '';
-  const coverPath = cover ? cover.name : '';
 
-  // console.log('Client Name:', clientName);
-  // console.log('Logo:', logoPath);
-  // console.log('Cover:', coverPath);
-
-  // You can then use the collected data to submit it to a server or perform other actions
-
-
-
-  axios.post('/addClient', {
+  axios.post('http://localhost:3000/addClient', {
     clientName,
     logo,
     cover
