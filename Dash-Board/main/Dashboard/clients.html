@@ -121,21 +121,21 @@
                                 <!-- <p class="text-muted m-b-15 f-s-12">Use the input classes on an
                                     <code>.input-default, input-flat, .input-rounded</code> for Default input.</p> -->
                                 <div class="basic-form">
-                                    <form enctype="multipart/form-data">
+                                    <form method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Enter The Name Of The Client</label>
-                                            <input type="text" name="clientName" class="form-control input-default"
+                                            <input type="text" id="clientName" name="clientName" class="form-control input-default"
                                                 placeholder="Enter The Name Of The Client">
                                         </div>
                                         <label>Upload The Logo Of The Client</label>
 
                                         <div class="form-group">
-                                            <input type="file" name="logo" class="form-control-file">
+                                            <input type="file" id="logo" name="logo" class="form-control-file">
                                         </div>
                                         <label>Upload The Cover Photo Of The Client</label>
 
                                         <div class="form-group">
-                                            <input type="file" name="cover" class="form-control-file">
+                                            <input type="file" id="cover" name="cover" class="form-control-file">
                                         </div>
                                         <button type="submit" class="btn btn-dark">Submit</button>
                                         <!-- <div class="form-group">

@@ -11,6 +11,7 @@ app.post("/addClient", async (req, res) => {
   let data = await clientModel.findOne({ name: req.body.clientName });
   let logo = req.files.logo[0].path
   let cover = req.files.cover[0].path
+  // console.log(req.body.clientName);
 
     if (!data) {
       //true statment
