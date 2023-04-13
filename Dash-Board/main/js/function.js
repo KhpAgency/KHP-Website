@@ -4,41 +4,51 @@ form.addEventListener("submit", function (event) {
   collectFormData();
 });
 
+function clearForm () {  
+  form.reset()
+}
+
 function collectFormData() {
-<<<<<<< Updated upstream
-  const form = document.querySelector('form');
-  const formData = new FormData(form);
-  const clientName = formData.get('clientName');
-  const logo = formData.get('logo');
-  const cover = formData.get('cover');
-
-
-  axios.post('http://localhost:3000/addClient', {
-    clientName,
-    logo,
-    cover
-  })
-=======
-
-
   const options = {
     method: "POST",
     headers: {
       "Content-Type": "multipart/form-data",
     },
     url: "http://localhost:3000/addClient",
-    data : form
-
+    data: form,
   };
   axios
     .request(options)
->>>>>>> Stashed changes
     .then(function (response) {
       console.log(response.data);
+
+      
+      // if (response.data.message=="success") {
+      //   Toastify({
+      //     text: "Client added successfully",
+      //     className: "info",
+      //     style: {
+      //       background: "linear-gradient(to right, #00b09b, #96c93d)",
+      //     }
+      //   }).showToast(); 
+      //   clearForm()
+      // } else {
+
+      //   // to show error message in toast
+      //   Toastify({
+      //     text: response.data.message ,
+      //     className: "info",
+      //     style: {
+      //       background: "red",
+      //       borderRadius: "5px",
+      //     }
+      //   }).showToast();
+      // }
+
     })
     .catch(function (error) {
       console.error(error);
+      console.log("");
     });
-
-
 }
+

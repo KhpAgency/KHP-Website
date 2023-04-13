@@ -11,14 +11,15 @@ app.post("/addClient", async (req, res) => {
   let data = await clientModel.findOne({ name: req.body.clientName });
   let logo = req.files.logo[0].path
   let cover = req.files.cover[0].path
-  // console.log(req.body.clientName);
+  // console.log(logo);
+  // console.log(cover);
 
     if (!data) {
       //true statment
       await clientModel.insertMany({name:req.body.clientName, logo , cover})
-    res.json({ message: "Success" });
+    res.json({ message: "success" });
     } else {
-      //false statment
+      //false statmentss
       res.json({ message: "client name already exists"})
     }
 
