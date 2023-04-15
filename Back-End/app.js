@@ -18,5 +18,8 @@ mongoose.connect("mongodb+srv://admin:07775666@magdy.pbupj.mongodb.net/KHP", {
 
 app.use(require('./routes/client.route'));
 app.use(require('./routes/projects.route'));
+app.use(require('./routes/3d.route'));
+app.use(require('./routes/4d.route'));
+app.use(require('./routes/animation.route'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

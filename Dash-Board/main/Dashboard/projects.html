@@ -128,8 +128,8 @@
                                             <!-- <div class="input-group-prepend">
                                                 <label class="input-group-text">Options</label>
                                             </div> -->
-                                            <select class="custom-select">
-                                                <option selected="selected">Choose...</option>
+                                            <select class="custom-select" name="clientName" required>
+                                                <option  selected="selected">Choose...</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
@@ -138,12 +138,12 @@
                                         <label>Upload Branding Photos</label>
 
                                         <div class="form-group">
-                                            <input type="file" class="form-control-file" multiple>
+                                            <input type="file" class="form-control-file" multiple required>
                                         </div>
                                         <label>Upload Profile Photos</label>
 
                                         <div class="form-group">
-                                            <input type="file" class="form-control-file" multiple>
+                                            <input type="file" class="form-control-file" multiple required>
                                         </div>
                                         <button type="submit" class="btn btn-dark">Submit</button>
                                         <!-- <div class="form-group">
