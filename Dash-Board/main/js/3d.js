@@ -2,13 +2,14 @@
 async function getdata (){
 
     
-  let data=  await axios.get('http://localhost:3000/clients').then(e=>console.log(e.data))
-    // console.log(data)
-    data.map(e=>e.data.name)
-    
-    // let option = document.getElementById('option').value
-    
-    // console.log(option);
-//    await data.map(e=>console.log(e))
+  let {data}=  await axios.get('http://localhost:3000/clients')
+    console.log(data)
+  let names=  data.map((item)=>(
+    `<option value=${item.name} id="option"> ${item.name} </option>`
+  ))
+
+  document.getElementById('clients').innerHTML=names;
+
+//   console.log(names);
 }
 getdata()
