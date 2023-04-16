@@ -4,7 +4,7 @@ const addClientMiddleware = require("../middleware/addClient.middleware");
 
 app.get("/clients", async (req, res) => {
   let allData = await clientModel.find();
-  res.json({ allData });
+  res.json( allData );
 });
 
 app.post("/addClient", addClientMiddleware, async (req, res , next) => {
