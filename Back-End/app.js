@@ -21,5 +21,6 @@ app.use(require('./routes/projects.route'));
 app.use(require('./routes/3d.route'));
 app.use(require('./routes/4d.route'));
 app.use(require('./routes/animation.route'));
+app.use(require('./routes/websites.route'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
