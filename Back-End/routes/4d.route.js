@@ -3,6 +3,11 @@ const clientModel = require("../model/client.model");
 const fourDmodel = require("../model/4d.model");
 const add4dMiddleware = require("../middleware/add4d.middleware");
 
+app.get('/all4d', async (req, res) => {
+  let data = await fourDmodel.find();
+  res.json( data );
+});
+
 app.post("/add4d", add4dMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
 

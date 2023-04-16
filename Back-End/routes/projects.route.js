@@ -3,6 +3,11 @@ const clientModel = require("../model/client.model");
 const projectsModel = require("../model/brandingProjects.model");
 const addProjectMiddleware = require("../middleware/addProject.middleware");
 
+app.get('/allProjects', async (req, res) => {
+  let data = await projectsModel.find();
+  res.json( data );
+});
+
 app.post("/addProject", addProjectMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
   // console.log(client);

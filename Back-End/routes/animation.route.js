@@ -2,6 +2,11 @@ const app = require("express").Router();
 const clientModel = require("../model/client.model");
 const animationModel = require("../model/animation.model");
 
+app.get('/allAnimation', async (req, res) => {
+  let data = await animationModel.find();
+  res.json( data );
+});
+
 app.post("/addAnimation", async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
 

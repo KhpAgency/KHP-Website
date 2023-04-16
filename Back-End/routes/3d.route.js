@@ -3,6 +3,11 @@ const clientModel = require("../model/client.model");
 const threeDmodel = require("../model/3d.model");
 const add3dMiddleware = require("../middleware/add3d.middleware");
 
+app.get('/all3d', async (req, res) => {
+  let data = await threeDmodel.find();
+  res.json( data );
+});
+
 app.post("/add3d", add3dMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
 

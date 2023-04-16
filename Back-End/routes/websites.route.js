@@ -3,6 +3,11 @@ const clientModel = require("../model/client.model");
 const websiteModel = require("../model/website.model");
 const websiteMiddleware = require("../middleware/website.middleware");
 
+app.get('/allWebsites', async (req, res) => {
+  let data = await websiteModel.find();
+  res.json( data );
+});
+
 app.post("/addWebsite", websiteMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
 
