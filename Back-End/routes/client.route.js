@@ -4,6 +4,7 @@ const addClientMiddleware = require("../middleware/addClient.middleware");
 
 app.get("/clients", async (req, res) => {
   let allData = await clientModel.find();
+  console.log(allData);
   if (allData.length != 0) {
     res.json(allData);
   } else {
