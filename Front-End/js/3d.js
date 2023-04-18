@@ -1,17 +1,23 @@
 async function get3dprojects() {
-  let { data } = await axios.get('http://localhost:3000/all3d');
-  console.log(data);
-  let project = data.map((item) => (
-
-
-    `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${item.clientID.logo}" alt=""
+    let {data} = await axios.get('http://localhost:3000/all3d');
+    // console.log(data);
+    let project = data.map((item) => (
+      
+  
+        `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${item.clientID.logo}" alt=""
         class="cscale2">
   
         <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
         class="bodyy swiper-container mySwiper width90" style="width: 60%;margin-top: 40px;">
         <div class="swiper-wrapper">
         
+        <div class="swiper-slide">
+            ${item.threeDphotos.map((item2) =>{
         
+              `<img class="lazyload" data-src="${item2.path}" alt="">`
+           })}
+
+        </div>
 
         <div class="swiper-slide">
         <iframe width="950" height="490"
@@ -25,11 +31,11 @@ async function get3dprojects() {
         <div class="swiper-button-next arrows"></div>
         <div class="swiper-button-prev arrows"></div>
         <div class="swiper-pagination"></div>
-        </div>`
-  ))
+        </div>` 
+   ))
 
 
-  document.getElementById('3dprojects').innerHTML = project;
-
-}
-get3dprojects();
+    document.getElementById('3dprojects').innerHTML = project;
+  
+  }
+  get3dprojects();
