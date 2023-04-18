@@ -1,19 +1,15 @@
-async function getclients (){
+async function getclients() {
+  let { data } = await axios.get("http://localhost:3000/clients");
 
-    
-  let {data}=  await axios.get('http://localhost:3000/clients')
-
-  let names=  data.map((item)=>(
-    `<option value=${item.name} id="option"> ${item.name} </option>`
-  ))
-  document.getElementById('clients').innerHTML=names;
-
+  let names = data.map(
+    (item) => `<option value='${item.name}' id="option"> ${item.name} </option>`
+  );
+  document.getElementById("clients").innerHTML = names;
 }
-getclients()
+getclients();
 
 // async function get3dprojects (){
 
-    
 //   let {data}=  await axios.get('http://localhost:3000/all3d')
 // console.log(data[0]);
 //   let project=  data[0].map((item)=>(
@@ -24,18 +20,14 @@ getclients()
 // }
 // get3dprojects()
 
-
-
-
-
 const form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   collectFormData();
 });
 
-function clearForm () {  
-  form.reset()
+function clearForm() {
+  form.reset();
 }
 
 function collectFormData() {
@@ -52,40 +44,35 @@ function collectFormData() {
     .then(function (response) {
       console.log(response.data);
 
-      
-      if (response.data.message=="success") {
+      if (response.data.message == "success") {
         Toastify({
           text: "3D project added successfully",
           className: "info",
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
-          }
-        }).showToast(); 
-        clearForm()
+          },
+        }).showToast();
+        clearForm();
       } else {
+        console.log("test");
+        console.log(response.data.message);
 
         // to show error message in toast
         Toastify({
-          text: response.data.message ,
+          text: response.data.message,
           className: "info",
           style: {
             background: "red",
             borderRadius: "5px",
-          }
+          },
         }).showToast();
       }
-
     })
     .catch(function (error) {
       console.error(error);
       console.log("");
     });
-
-
-    
-  }
-  
-  
+}
 
 //   <img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="images/clients/safwa1.png" alt=""
 //   class="cscale2">
@@ -103,7 +90,6 @@ function collectFormData() {
 //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 //         allowfullscreen></iframe>
 //     </div>
-
 
 //   </div>
 //   <div class="swiper-button-next arrows"></div>
