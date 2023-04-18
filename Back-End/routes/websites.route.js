@@ -3,9 +3,14 @@ const clientModel = require("../model/client.model");
 const websiteModel = require("../model/website.model");
 const websiteMiddleware = require("../middleware/website.middleware");
 
-app.get('/allWebsites', async (req, res) => {
+app.get("/allWebsites", async (req, res) => {
   let data = await websiteModel.find();
-  res.json( data );
+  // console.log(data.length);
+  if (data.length != 0) {
+    res.json(data);
+  } else {
+    res.json("No websites found");
+  }
 });
 
 app.post("/addWebsite", websiteMiddleware, async (req, res, next) => {

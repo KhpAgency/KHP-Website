@@ -5,8 +5,11 @@ const addProjectMiddleware = require("../middleware/addProject.middleware");
 
 app.get('/allProjects', async (req, res) => {
   let data = await projectsModel.find();
-  res.json( data );
-});
+  if (data.length != 0) {
+    res.json(data);
+  } else {
+    res.json({message:"No projects found"});
+  }});
 
 app.post("/addProject", addProjectMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });

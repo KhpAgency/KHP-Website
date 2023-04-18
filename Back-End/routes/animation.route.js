@@ -4,7 +4,11 @@ const animationModel = require("../model/animation.model");
 
 app.get('/allAnimation', async (req, res) => {
   let data = await animationModel.find();
-  res.json( data );
+  if (data.length != 0) {
+    res.json(data);
+  } else {
+    res.json({message:"No Animation projects found"});
+  }
 });
 
 app.post("/addAnimation", async (req, res, next) => {
