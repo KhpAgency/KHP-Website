@@ -4,7 +4,7 @@ const threeDmodel = require("../model/3d.model");
 const add3dMiddleware = require("../middleware/add3d.middleware");
 
 app.get("/all3d", async (req, res) => {
-  let data = await threeDmodel.find();
+  let data = await threeDmodel.find().populate('clientID');
   if (data.length != 0) {
     res.json(data);
   } else {

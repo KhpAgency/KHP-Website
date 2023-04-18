@@ -12,6 +12,11 @@ app.get("/clients", async (req, res) => {
   }
 });
 
+app.get('/client', async (req, res) => {
+  let client = await clientModel.findOne({name: req.headers.name})
+  res.json(client);
+})
+
 app.post("/addClient", addClientMiddleware, async (req, res, next) => {
   let data = await clientModel.findOne({ name: req.body.clientName });
   let logo = req.files.logo[0].path;

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const threeDSchema = mongoose.Schema ({
     name: String,
-    clientID : mongoose.Schema.Types.ObjectId,
+    clientID : {type: mongoose.Schema.Types.ObjectId , ref:'client'},
     threeDphotos: Array,
     videoLink: String,
     
