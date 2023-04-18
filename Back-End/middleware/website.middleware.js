@@ -16,7 +16,8 @@ function fileFilter(req, file, cb) {
   if (
     file.mimetype == "image/png" ||
     file.mimetype == "image/jpg" ||
-    file.mimetype == "image/jpeg"
+    file.mimetype == "image/jpeg" ||
+    file.mimetype == "image/webp"
   ) {
     cb(null, true);
   } else {
@@ -26,6 +27,4 @@ function fileFilter(req, file, cb) {
 
 const upload = multer({ dest: "uploads/websites", storage, fileFilter });
 
-module.exports = app.use(
-  upload.array("websitephotos")
-);
+module.exports = app.use(upload.array("websitephotos"));
