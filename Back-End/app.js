@@ -5,7 +5,7 @@ const multer = require('multer');
 const PORT = 3000;
 const cors = require("cors")
 
-// app.use(cors())
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
