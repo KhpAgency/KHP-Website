@@ -9,7 +9,7 @@ async function get3dprojects() {
   let x = data.map(item => item)
   console.log(x);
 
-  let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${FaresUrl}/${item.clientID.logo}" alt=""
+  let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${MagdyUrl}/${item.clientID.logo}" alt=""
         class="cscale2">
   
         <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
@@ -18,7 +18,7 @@ async function get3dprojects() {
 
         ${item.threeDphotos.map((items) =>(`<div class="swiper-slide">
 
-        <img src="${FaresUrl}/${items.path}" alt="">
+        <img src="${MagdyUrl}/${items.path}" alt="">
 
       </div>`))}
         
