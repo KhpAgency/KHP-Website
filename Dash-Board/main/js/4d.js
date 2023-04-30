@@ -36,7 +36,7 @@ function collectFormData() {
 
       if (response.data.message == "success") {
         Toastify({
-          text: "4D project added successfully",
+          text: "3D project added successfully",
           className: "info",
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -61,3 +61,4 @@ function collectFormData() {
       console.log("");
     });
 }
+
