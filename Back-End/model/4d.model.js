@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const fourDSchema = mongoose.Schema ({
     name: String,
-    clientID : mongoose.Schema.Types.ObjectId,
+    clientID : {type: mongoose.Schema.Types.ObjectId , ref:'client'},
     fourDphotos: Array,
     videoLink: String,
     

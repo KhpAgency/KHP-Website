@@ -4,7 +4,7 @@ const fourDmodel = require("../model/4d.model");
 const add4dMiddleware = require("../middleware/add4d.middleware");
 
 app.get('/all4d', async (req, res) => {
-  let data = await fourDmodel.find();
+  let data = await threeDmodel.find().populate('clientID');
   if (data.length != 0) {
     res.json(data);
   } else {
