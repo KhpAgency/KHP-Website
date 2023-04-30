@@ -2,6 +2,7 @@ async function get3dprojects() {
 
   let MagdyUrl= 'C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End'
   let FaresUrl= 'C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End'
+  let KhaledUrl= 'C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End'
 
 
   let { data } = await axios.get("http://localhost:3000/all3d");
