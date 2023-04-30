@@ -12,6 +12,15 @@ app.get("/all3d", async (req, res) => {
   }
 });
 
+app.get('/uploads/3d',async (req, res) => {
+  let data = await threeDmodel.find().populate('clientID');
+  if (data.length != 0) {
+    res.json(data);
+  } else {
+    res.json({message:"No 3D projects found"});
+  }
+});
+
 app.post("/add3d", add3dMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
 
