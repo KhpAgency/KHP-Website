@@ -4,7 +4,7 @@ async function get3dprojects() {
   let x = data.map(item => item)
   console.log(x);
 
-  let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End/${item.clientID.logo}" alt=""
+  let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End/${item.clientID.logo}" alt=""
         class="cscale2">
   
         <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
@@ -13,13 +13,13 @@ async function get3dprojects() {
 
         ${item.threeDphotos.map((items) =>(`<div class="swiper-slide">
 
-        <img src="C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End/${items.path}" alt="">
+        <img src="C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End/${items.path}" alt="">
 
       </div>`))}
         
         ${item.videoLink &&`<div class="swiper-slide">
         <iframe width="950" height="490"
-        src="https://www.youtube.com/embed/T4kkoCMyCCY?loop=1&controls=1&autoplay=0&mute=1"
+        src="${item.videoLink}"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
