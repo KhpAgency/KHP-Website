@@ -1,19 +1,18 @@
-async function get3dprojects() {
+async function get4dprojects() {
   let MagdyUrl= 'C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End'
   let FaresUrl= 'C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End'
 
   let { data } = await axios.get("http://localhost:3000/all4d");
-  let x = data.map(item => item)
-  console.log(x);
+  console.log(data);
 
-  let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${MagdyUrl}/${item.clientID.logo}" alt=""
+  let project = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${MagdyUrl}/${item.clientID.logo}" alt=""
         class="cscale2">
   
         <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
         class="bodyy swiper-container mySwiper width90" style="width: 60%;margin-top: 40px;">
         <div class="swiper-wrapper">
 
-        ${item.threeDphotos.map((items) =>(`<div class="swiper-slide">
+        ${item.fourDphotos.map((items) =>(`<div class="swiper-slide">
 
         <img src="${MagdyUrl}/${items.path}" alt="">
 
@@ -56,4 +55,4 @@ async function get3dprojects() {
   }
 }
 
-get3dprojects();
+get4dprojects();
