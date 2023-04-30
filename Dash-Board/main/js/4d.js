@@ -26,7 +26,7 @@ function collectFormData() {
     headers: {
       "Content-Type": "multipart/form-data",
     },
-    url: "http://localhost:3000/add3d",
+    url: "http://localhost:3000/add4d",
     data: form,
   };
   axios
@@ -36,7 +36,7 @@ function collectFormData() {
 
       if (response.data.message == "success") {
         Toastify({
-          text: "3D project added successfully",
+          text: "4D project added successfully",
           className: "info",
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
