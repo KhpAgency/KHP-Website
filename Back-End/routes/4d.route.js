@@ -26,6 +26,7 @@ app.post("/add4d", add4dMiddleware, async (req, res, next) => {
       let fourDproject = await fourDmodel.insertMany({
         name: clientName,
         clientID:id,
+        fourDphotos,
         videoLink,
       });
       res.json({ message: "success", data: fourDproject[0] });
