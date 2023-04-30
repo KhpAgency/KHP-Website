@@ -4,7 +4,7 @@ const websiteModel = require("../model/website.model");
 const websiteMiddleware = require("../middleware/website.middleware");
 
 app.get("/allWebsites", async (req, res) => {
-  let data = await websiteModel.find();
+  let data = await websiteModel.find().populate('clientID');
   // console.log(data.length);
   if (data.length != 0) {
     res.json(data);

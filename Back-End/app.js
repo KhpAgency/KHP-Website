@@ -4,9 +4,11 @@ const app = express();
 const multer = require('multer');
 const PORT = 3000;
 const cors = require("cors")
+// const bodyParser = require('body-parser');
 
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 

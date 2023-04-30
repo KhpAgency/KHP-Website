@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/2.png">
     <!-- Custom Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="../js/modernizr-3.6.0.min.js"></script>
 </head>
 
@@ -121,14 +122,13 @@
                                 <!-- <p class="text-muted m-b-15 f-s-12">Use the input classes on an
                                     <code>.input-default, input-flat, .input-rounded</code> for Default input.</p> -->
                                 <div class="basic-form">
-                                    <form enctype="multipart/form-data">
+                                    <form>
                                         <label>Choose The Client</label>
                                         <div class="input-group mb-3">
-                                            <select class="custom-select" name="clientName">
-                                                <option disabled selected="selected">Choose...</option>
+                                            <select class="custom-select" id="clients" name="clientName">
+                                                <option selected="selected">Choose...</option>
                                                 <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+
                                             </select>
                                         </div>
                                         <button type="button" class="btn btn-primary newbutton" onclick="addInput()">Add
@@ -137,21 +137,7 @@
                                         <div class="form-group">
                                             <input class="form-control form-control-sm" type="text" name="animationUrl" placeholder="Enter Video URL">
                                         </div>
-                                        <script>
-                                            function addInput() {
-                                                var newInput = document.createElement("input");
-                                                newInput.className = "form-control form-control-sm";
-                                                newInput.type = "text";
-                                                newInput.placeholder = "Enter Video URL";
-                                                var formGroup = document.createElement("div");
-                                                formGroup.className = "form-group";
-                                                formGroup.appendChild(newInput);
-                                                var submitButton = document.querySelector("button[type=submit]");
-                                                var formElement = document.querySelector("form");
-                                                formElement.insertBefore(formGroup, submitButton);
-                                                formElement.insertBefore(submitButton, formGroup.nextSibling.nextSibling);
-                                            }
-                                        </script>
+                                        
 
                                         <button type="submit" class="btn btn-dark">Submit</button>
                                     </form>
@@ -175,7 +161,10 @@
     <script src="../../assets/plugins/common/common.min.js"></script>
     <!-- Custom script -->
     <script src="../js/custom.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/animation.js"></script>
+
 
 </body>
 

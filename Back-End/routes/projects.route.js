@@ -4,7 +4,7 @@ const projectsModel = require("../model/brandingProjects.model");
 const addProjectMiddleware = require("../middleware/addProject.middleware");
 
 app.get('/allProjects', async (req, res) => {
-  let data = await projectsModel.find();
+  let data = await projectsModel.find().populate('clientID');
   if (data.length != 0) {
     res.json(data);
   } else {
