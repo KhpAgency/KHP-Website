@@ -8,7 +8,7 @@ const cors = require("cors")
 
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 
 
