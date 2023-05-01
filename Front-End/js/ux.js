@@ -7,7 +7,7 @@ async function getux() {
   let url= 'https://khp-api.onrender.com/'
   // ${url}${(item.clientID.logo.replace("uploads\\", ""))}
 
-  let { data } = await axios.get("http://localhost:3000/allWebsites");
+  let { data } = await axios.get("https://khp-api.onrender.com/allWebsites");
 //   let x = data.map((item) => item);
 let project =`<h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
         style="text-align: center;">Our clients</h3><div id="myBtnContainer">
