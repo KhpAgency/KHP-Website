@@ -26,7 +26,7 @@ let project =`<h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200"
                     <div style="display: flex;place-content: center;" class="wow fadeInLeft">
                         <div class="bodyy swiper-container mySwiper marginlast" style="width: 90%;">
                             <div class="swiper-wrapper">
-                            ${item.websitephotos.map(items=>`<div class="swiper-slide"><img class="lazyload" data-src="${(items.path.replace("uploads\\", ""))}" alt=""></></div>`)}
+                            ${item.websitephotos.map(items=>`<div class="swiper-slide"><img class="lazyload" data-src="${url}${(items.path.replace("uploads/", ""))}" alt=""></></div>`)}
 
                             </div>
                             <div class="swiper-button-next arrows"></div>
