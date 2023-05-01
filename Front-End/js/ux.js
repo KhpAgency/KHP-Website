@@ -1,11 +1,10 @@
 async function getux() {
   let MagdyUrl = "C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End";
-  let FaresUrl =
-    "C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End";
+  let FaresUrl = "C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End";
   let KhaledUrl = "C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End";
 
   let { data } = await axios.get("http://localhost:3000/allWebsites");
-  let x = data.map((item) => item);
+//   let x = data.map((item) => item);
 let project =`<h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
         style="text-align: center;">Our clients</h3><div id="myBtnContainer">
             <div id="uxlogo" class="row " style="padding-left: 70px;padding-right: 70px;padding-bottom: 70px;">
@@ -37,7 +36,7 @@ let project =`<h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200"
         </div>`
 
 
-  document.getElementById("test").innerHTML = project;
+  document.getElementById("ux").innerHTML = project;
 
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
