@@ -3,10 +3,14 @@ async function get4dprojects() {
   let FaresUrl= 'C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End'
   let KhaledUrl= 'C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End'
 
+    // url for production version
+  // let url= 'https://khp-api.onrender.com/'
+  // ${url}${(item.clientID.logo.replace("uploads\\", ""))}
+
   let { data } = await axios.get("http://localhost:3000/all4d");
   console.log(data);
 
-  let project = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${FaresUrl}/${item.clientID.logo}" alt=""
+  let project = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${MagdyUrl}/${item.clientID.logo}" alt=""
         class="cscale2">
   
         <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
@@ -15,7 +19,7 @@ async function get4dprojects() {
 
         ${item.fourDphotos.map((items) =>(`<div class="swiper-slide">
 
-        <img src="${FaresUrl}/${items.path}" alt="">
+        <img src="${MagdyUrl}/${items.path}" alt="">
 
       </div>`))}
         
