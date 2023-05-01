@@ -14,7 +14,7 @@ function collectFormData() {
     headers: {
       "Content-Type": "multipart/form-data",
     },
-    url: "http://localhost:3000/addClient",
+    url: "https://khp-api.onrender.com/addClient",
     data: form,
   };
   axios

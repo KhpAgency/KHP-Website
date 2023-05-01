@@ -1,5 +1,5 @@
 async function getclients() {
-    let { data } = await axios.get("http://localhost:3000/clients");
+    let { data } = await axios.get("https://khp-api.onrender.com/clients");
   
     let names = data.map(
       (item) => `<option value='${item.name}' id="option"> ${item.name} </option>`
@@ -26,7 +26,7 @@ async function getclients() {
       headers: {
         "Content-Type": "multipart/form-data",
       },
-      url: "http://localhost:3000/addWebsite",
+      url: "https://khp-api.onrender.com/addWebsite",
       data: form,
     };
     axios
