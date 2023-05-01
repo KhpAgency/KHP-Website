@@ -4,8 +4,11 @@ async function get3dprojects() {
   let FaresUrl= 'C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End'
   let KhaledUrl= 'C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End'
 
+    // url for production version
+  let url= 'https://khp-api.onrender.com/'
+  // ${url}${(item.clientID.logo.replace("uploads\\", ""))}
 
-  let { data } = await axios.get("http://localhost:3000/all3d");
+  let { data } = await axios.get(`${url}all3d`);
   let x = data.map(item => item)
   console.log(x);
 
