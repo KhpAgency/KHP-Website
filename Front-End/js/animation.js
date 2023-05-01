@@ -2,11 +2,14 @@ async function getAnimation() {
     let MagdyUrl= 'C:/Users/Lenovo/Documents/GitHub/KHP-Website/Back-End'
     let FaresUrl= 'C:/Users/khpar/OneDrive/Documents/GitHub/KHP-Website/Back-End'
     let KhaledUrl= 'C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End'
+
+  let url= 'https://khp-api.onrender.com/'
+
   
-    let { data } = await axios.get("http://localhost:3000/allAnimation");
+    let { data } = await axios.get(`${url}allAnimation`);
     console.log(data);
   
-    let animation = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${MagdyUrl}/${item.clientID.logo}" alt="" class="cscale2">
+    let animation = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${url}${(item.clientID.logo.replace("uploads\\", ""))}" alt="" class="cscale2">
     <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
   class="bodyy swiper-container mySwiper width90" style="width: 60%;margin-top: 40px;">
   <div class="swiper-wrapper">
