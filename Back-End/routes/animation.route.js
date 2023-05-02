@@ -13,7 +13,6 @@ app.get('/allAnimation', async (req, res) => {
 
 app.post("/addAnimation", async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
-  console.log(req.body.clientName);
 
   if (client) {
     let id = client._id;

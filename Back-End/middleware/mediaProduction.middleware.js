@@ -4,7 +4,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/3d");
+    cb(null, "uploads/media-production");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + Math.random() * 100 + file.originalname);
@@ -25,8 +25,8 @@ function fileFilter(req, file, cb) {
   }
 }
 
-const upload = multer({ dest: "uploads/3d", storage, fileFilter });
+const upload = multer({ dest: "uploads/media-production", storage, fileFilter });
 
 module.exports = app.use(
-  upload.array("threeDphotos")
+  upload.array("mediaProductionPhotos")
 );

@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const multer = require('multer');
 const PORT = 3000;
 const cors = require("cors")
 const path = require('path');
@@ -23,6 +22,9 @@ app.use(require('./routes/3d.route'));
 app.use(require('./routes/4d.route'));
 app.use(require('./routes/animation.route'));
 app.use(require('./routes/websites.route'));
+app.use(require('./routes/digitalMarketing.route'));
+app.use(require('./routes/mediaProduction.route'));
+app.use(require('./routes/events.route'));
 
 
 app.listen(process.env.PORT || PORT, () =>
