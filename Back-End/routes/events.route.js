@@ -3,11 +3,11 @@ const clientModel = require("../model/client.model");
 const eventsModel = require("../model/events.model");
 
 app.get('/allEvents', async (req, res) => {
+    console.log("testing from back");
   let data = await eventsModel.find().populate('clientID');
   if (data.length != 0) {
     res.json(data);
   } else {
-    res.json({message:"No Events found"});
   }
 });
 

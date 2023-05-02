@@ -9,12 +9,14 @@ function clearForm () {
 }
 
 function collectFormData() {
+  let url = 'https://khp-api.onrender.com/';
+
   const options = {
     method: "POST",
     headers: {
       "Content-Type": "multipart/form-data",
     },
-    url: "https://khp-api.onrender.com/addClient",
+    url: `${url}addClient`,
     data: form,
   };
   axios

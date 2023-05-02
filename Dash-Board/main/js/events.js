@@ -14,7 +14,9 @@ function addInput() {
   }
   
   async function getclients() {
-    let { data } = await axios.get("https://khp-api.onrender.com/clients");
+    let url = 'https://khp-api.onrender.com/';
+
+    let { data } = await axios.get(`${url}clients`);
   
     let names = data.map(
       (item) => `<option value='${item.name}' id="option"> ${item.name} </option>`
@@ -40,7 +42,7 @@ function addInput() {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      url: "https://khp-api.onrender.com/addEvents",
+      url: `${url}addEvents`,
       data: new URLSearchParams(formData),
     };
     axios

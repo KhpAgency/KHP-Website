@@ -4,7 +4,7 @@ const mediaProductionModel = require("../model/mediaProduction.model");
 const mediaProductionMiddleware = require("../middleware/mediaProduction.middleware");
 
 app.get("/allMediaProduction", async (req, res) => {
-  let data = await digitalmodel.find().populate('clientID');
+  let data = await mediaProductionModel.find().populate('clientID');
   if (data.length != 0) {
     res.json(data);
   } else {
@@ -28,7 +28,7 @@ app.post("/addMediaProduction", mediaProductionMiddleware, async (req, res, next
       let mediaProject = await mediaProductionModel.insertMany({
         name: clientName,
         clientID: id,
-        mediaProduction : mediaProductionPhotos,
+        mediaPhotos : mediaProductionPhotos,
         });
       res.json({ message: "success", data: mediaProject[0] });
     }

@@ -10,7 +10,7 @@ async function get3dprojects() {
 
   let { data } = await axios.get(`${url}all3d`);
   let x = data.map(item => item)
-  console.log(x);
+  // console.log(x);
 
   let project = data.map((item) => `<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${url}${(item.clientID.logo.replace("uploads\\", ""))}" alt=""
         class="cscale2">

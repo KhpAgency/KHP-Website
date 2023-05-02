@@ -7,7 +7,7 @@ async function getAnimation() {
 
   
     let { data } = await axios.get(`${url}allAnimation`);
-    console.log(data);
+    // console.log(data);
   
     let animation = data.map((item) =>`<img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${url}${(item.clientID.logo.replace("uploads\\", ""))}" alt="" class="cscale2">
     <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
