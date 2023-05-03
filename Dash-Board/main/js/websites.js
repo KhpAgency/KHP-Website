@@ -1,4 +1,4 @@
-let url = 'http://localhost:3000/';
+let url = 'https://khp-api.onrender.com/';
 async function getclients() {
 
     let { data } = await axios.get(`${url}clients`);
