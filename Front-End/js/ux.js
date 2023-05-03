@@ -4,9 +4,9 @@ async function getux() {
   let KhaledUrl = "C:/Users/hamuk/Documents/GitHub/KHP-Website/Back-End";
 
   // url for production version
-  let url = 'https://khp-api.onrender.com/';
+  let url = 'http://localhost:3000/';
 
-  let { data } = await axios.get("https://khp-api.onrender.com/allWebsites");
+  let { data } = await axios.get(`${url}allWebsites`);
 
   let project = `<h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
         style="text-align: center;">Our clients</h3>
@@ -28,7 +28,7 @@ async function getux() {
                 <div class="bodyy swiper-container mySwiper marginlast" style="width: 90%;">
                   <div class="swiper-wrapper">
                     ${item.websitephotos.map(items =>
-                      `<div class="swiper-slide"><img class="lazyload" data-src="${url}${items.path.replace("uploads/", "")}" alt=""></div>`
+                      `<div class="swiper-slide"><img class="lazyload" data-src="${url}${items.path.replace("uploads\\", "")}" alt=""></div>`
                     ).join('')}
                   </div>
                   <div class="swiper-button-next arrows"></div>
