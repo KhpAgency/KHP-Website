@@ -1,5 +1,5 @@
+let url = 'https://khp-api.onrender.com/';
 async function getclients() {
-  let url = 'https://khp-api.onrender.com/';
 
     let { data } = await axios.get(`${url}clients`);
   
