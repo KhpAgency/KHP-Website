@@ -1,5 +1,5 @@
+let url = 'https://khp-api.onrender.com/';
 async function getclients() {
-  let url = 'https://khp-api.onrender.com/';
 
     let { data } = await axios.get(`${url}clients`);
   
@@ -38,7 +38,7 @@ async function getclients() {
   
         if (response.data.message == "success") {
           Toastify({
-            text: "4D project added successfully",
+            text: "project added successfully",
             className: "info",
             style: {
               background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -60,7 +60,7 @@ async function getclients() {
       })
       .catch(function (error) {
         console.error(error);
-        console.log("");
+        // console.log("");
       });
   }
   

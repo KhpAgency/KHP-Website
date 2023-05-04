@@ -6,8 +6,8 @@ async function getbranding() {
   
     let slider1 = data.map((item) => `<div class="owl-carousel">
     <div class="item">
-      <button class="btn2" onclick="filterSelection('api')"><a title="api" href="#divapi"><img
-            class="imgscale" src="images/clients/Logos Colored-01.png" alt=""></a></button>
+      <button class="btn2" onclick="filterSelection('${item.clientName}')"><a title="${item.clientName}" href="#div${item.clientName}"><img
+            class="imgscale" src="${url}${(item.clientID.logo.replace("uploads\\", ""))}" alt=""></a></button>
     </div>
   </div>`)
   
