@@ -37,7 +37,7 @@ async function getux() {
     </div>
   `;
 
-  document.getElementById("ux").innerHTML = project.join('');
+  document.getElementById("ux").innerHTML = project;
 
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
