@@ -11,7 +11,7 @@ async function getbranding() {
       </div>
     </div>`).join('')
   
-    document.getElementById("hambozo").innerHTML = slider1;
+    document.getElementById("slider1").innerHTML = slider1;
 
   
   }
