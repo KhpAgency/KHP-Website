@@ -441,3 +441,11 @@ function showgalina2(){
 	divgalina1.style.display="none";
 	divgalina2.style.display="block";
 }
+
+
+/* my preloader start*/
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hide');
+});
+/* my preloader end*/
