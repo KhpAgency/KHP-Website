@@ -542,6 +542,9 @@
 
 /* slider 1 end */
 
+.mb5{
+  margin-bottom: 5%;
+}
 
 /* clients slider start */
 
@@ -1007,6 +1010,7 @@ label.error {
   display: inline-block;
   border: 0;
   border-radius: 0;
+  cursor: pointer;
   /* padding: 1.1em 2.28em 1em; */
   background-color: transparent;
   text-decoration: none;

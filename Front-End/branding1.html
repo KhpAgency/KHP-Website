@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/footerstyle.css">
     <link href="css/style.css" rel="stylesheet" media="screen">
 
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
 </head>
 
@@ -109,74 +110,91 @@
         <h3 class="titles newfont" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
             style="text-align: center;">Our clients</h3>
         <div id="myBtnContainer">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+            <div id="carouselExampleControls" class="carousel slide mb5" data-bs-ride="carousel" data-bs-touch="true"
+                data-bs-wrap="true" data-bs-interval="3500" data-bs-pause="hover" >
+                <div class="carousel-inner draggable-carousel">
                     <div class="carousel-item active ">
-                        <div class="row mt-5 ">
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c4.png"
-                                    alt="...">
+                        <div class="row mt-5 d-flex justify-content-center">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c4.png"
+                                class="btn2" alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c5.png"
-                                    alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c5.png"
+                                class="btn2"    alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c6.png"
-                                    alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c6.png"
-                                    alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    alt="...">
                             </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c4.png"
-                                    class="d-block " alt="...">
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c5.png"
-                                    class="d-block " alt="...">
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c6.png"
-                                    class="d-block " alt="...">
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c6.png"
-                                    class="d-block " alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    alt="...">
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row mt-5">
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c1.png"
-                                    class="d-block " alt="...">
+                        <div class="row mt-5 d-flex justify-content-center">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c4.png"
+                                class="btn2"    class="d-block " alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c2.png"
-                                    class="d-block " alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c5.png"
+                                class="btn2"    class="d-block " alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c3.png"
-                                    class="d-block " alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    class="d-block " alt="...">
                             </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c1.png"
-                                    class="d-block " alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    class="d-block " alt="...">
                             </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c2.png"
-                                    class="d-block " alt="...">
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center "> <img src="images/clients/c3.png"
-                                    class="d-block " alt="...">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c6.png"
+                                class="btn2"    class="d-block " alt="...">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="images/clients/c2.png" class="d-block w-100" alt="...">
+                        <div class="row mt-5 d-flex justify-content-center">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c1.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c2.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c3.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c2.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c3.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                        </div>
+                        <div class="row mt-5 d-flex justify-content-center">
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c1.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c2.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c3.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c2.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                            <div class="col-md-2 col-2 d-flex justify-content-center "> <img src="images/clients/c3.png"
+                                class="btn2"    class="d-block " alt="...">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"><svg xmlns='http://www.w3.org/2000/svg' fill='#0c737a' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"><svg xmlns='http://www.w3.org/2000/svg' fill='#0c737a' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -257,6 +275,8 @@
 
     <script src="js/scripts.js"></script>
     <script src="js/backtotop.js"></script>
+    <script src="js/branding.js"></script>
+    
 </body>
 
 </html>
