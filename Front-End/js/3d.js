@@ -3,7 +3,7 @@ async function get3dprojects() {
   let url = 'https://khp-api.onrender.com/';
 
   let { data } = await axios.get(`${url}all3d`);
-  // console.log(data);
+  console.log(data);
 
   let project = data.map((item) => `
     <img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="${url}${(item.clientID.logo.replace("uploads\\", ""))}" alt="" class="cscale2">
