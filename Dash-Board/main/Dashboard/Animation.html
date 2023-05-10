@@ -1,180 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>KHP - Admin Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/2.png">
-    <!-- Custom Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script src="../js/modernizr-3.6.0.min.js"></script>
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/img/2.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-<body class="v-light vertical-nav fix-header fix-sidebar">
+    <!-- Custom Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="../js/modernizr-3.6.0.min.js"></script>
+  </head>
+
+  <body class="v-light vertical-nav fix-header fix-sidebar">
     <div id="preloader">
-        <div class="loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-            </svg>
-        </div>
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle
+            class="path"
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke-width="3"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
     </div>
     <div id="main-wrapper">
-        <!-- header -->
-        <div class="header">
-            <div class="nav-header">
-                <div class="brand-logo"><a href="index.html"><b><img src="../../assets/img/blacklogo.png" alt="">
-                        </b>
-                        <!-- <span class="brand-title"><img src="../../assets/img/blacklogo.png" alt=""></span> -->
-                    </a>
-                </div>
-                <div class="nav-control">
-                    <div class="hamburger"><span class="line"></span> <span class="line"></span> <span
-                            class="line"></span>
-                    </div>
-                </div>
+      <!-- header -->
+      <div class="header">
+        <div class="nav-header">
+          <div class="brand-logo">
+            <a href="index.html"
+              ><b><img src="../../assets/img/blacklogo.png" alt="" /> </b>
+              <!-- <span class="brand-title"><img src="../../assets/img/blacklogo.png" alt=""></span> -->
+            </a>
+          </div>
+          <div class="nav-control">
+            <div class="hamburger">
+              <span class="line"></span> <span class="line"></span>
+              <span class="line"></span>
             </div>
-            <div class="header-content">
-                <div class="header-right">
+          </div>
+        </div>
+        <div class="header-content">
+          <div class="header-right">
+            <ul>
+              <li class="icons">
+                <a href="javascript:void(0)"
+                  ><i class="mdi mdi-account f-s-20" aria-hidden="true"></i
+                ></a>
+                <div class="drop-down dropdown-profile animated bounceInDown">
+                  <div class="dropdown-content-body">
                     <ul>
-                        <li class="icons"><a href="javascript:void(0)"><i class="mdi mdi-account f-s-20"
-                                    aria-hidden="true"></i></a>
-                            <div class="drop-down dropdown-profile animated bounceInDown">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <!-- <li><a href="#"><i class="mdi mdi-email"></i> <span>Inbox</span></a>
+                      <!-- <li><a href="#"><i class="mdi mdi-email"></i> <span>Inbox</span></a>
                                         </li>
                                         <li><a href="#"><i class="mdi mdi-settings"></i> <span>Setting</span></a>
                                         </li>
                                         <li><a href="#"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li> -->
-                                        <li><a href="#"><i class="icon-power"></i> <span>Logout</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+                      <li>
+                        <a href="#"
+                          ><i class="icon-power"></i> <span>Logout</span></a
+                        >
+                      </li>
                     </ul>
+                  </div>
                 </div>
-            </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <!-- #/ header -->
-        <!-- sidebar -->
-        <div class="nk-sidebar">
-            <div class="nk-nav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label">Main</li>
-                    <li><a href="index.html"><i class=" mdi mdi-view-dashboard"></i> <span
-                                class="nav-text">Dashboard</span></a>
-                    </li>
-                    <li class="nav-label">content</li>
+      </div>
+      <!-- #/ header -->
+      <!-- sidebar -->
+      <div class="nk-sidebar">
+        <div class="nk-nav-scroll">
+          <ul class="metismenu" id="menu">
+            <li class="nav-label">Main</li>
+            <li>
+              <a href="index.html"
+                ><i class="mdi mdi-view-dashboard"></i>
+                <span class="nav-text">Dashboard</span></a
+              >
+            </li>
+            <li class="nav-label">content</li>
 
-                    <li><a href="clients.html"><i class="mdi mdi-calendar-check"></i> <span
-                                class="nav-text">Clients</span></a></li>
-                    <li><a href="projects.html"><i class="mdi mdi-widgets"></i> <span
-                                class="nav-text">Projects</span></a>
-                    </li>
+            <li>
+              <a href="clients.html"
+                ><i class="mdi mdi-calendar-check"></i>
+                <span class="nav-text">Clients</span></a
+              >
+            </li>
+            <li>
+              <a href="projects.html"
+                ><i class="mdi mdi-widgets"></i>
+                <span class="nav-text">Projects</span></a
+              >
+            </li>
 
-                    <li><a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-diamond"></i> <span
-                                class="nav-text">Visual Content</span>
-                            <!-- <span class="badge badge-success nav-badge">16</span> -->
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="3D.html">3D</a>
-                            </li>
-                            <li><a href="4D.html">4D</a>
-                            </li>
-                            <li><a href="Animation.html">Animation</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="websites.html"><i class="mdi mdi-map"></i> <span class="nav-text">Websites</span></a>
-                    </li>
-                    <li>
-                        <a href="digital_marketing.html"><i class="mdi mdi-map"></i> <span class="nav-text">Digital Marketing</span></a>
-                    </li>
-                    <li>
-                        <a href="media_production.html"><i class="mdi mdi-map"></i> <span class="nav-text">Media Production</span></a>
-                    </li>
-                    <li>
-                        <a href="events.html"><i class="mdi mdi-map"></i> <span class="nav-text">Events</span></a>
-                    </li>                </ul>
-            </div>
-            <!-- #/ nk nav scroll -->
+            <li>
+              <a class="has-arrow" href="#" aria-expanded="false"
+                ><i class="mdi mdi-diamond"></i>
+                <span class="nav-text">Visual Content</span>
+                <!-- <span class="badge badge-success nav-badge">16</span> -->
+              </a>
+              <ul aria-expanded="false">
+                <li><a href="3D.html">3D</a></li>
+                <li><a href="4D.html">4D</a></li>
+                <li><a href="Animation.html">Animation</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="websites.html"
+                ><i class="mdi mdi-map"></i>
+                <span class="nav-text">Websites</span></a
+              >
+            </li>
+            <li>
+              <a href="digital_marketing.html"
+                ><i class="mdi mdi-map"></i>
+                <span class="nav-text">Digital Marketing</span></a
+              >
+            </li>
+            <li>
+              <a href="media_production.html"
+                ><i class="mdi mdi-map"></i>
+                <span class="nav-text">Media Production</span></a
+              >
+            </li>
+            <li>
+              <a href="events.html"
+                ><i class="mdi mdi-map"></i>
+                <span class="nav-text">Events</span></a
+              >
+            </li>
+          </ul>
         </div>
-        <!-- #/ sidebar -->
-        <!-- content body -->
-        <div class="content-body">
-            <div class="container-fluid">
-                <div class="row page-titles">
-                    <div class="col p-0">
-                        <h4>Hello, <span>Welcome here</span></h4>
-                    </div>
-                    <div class="col p-0">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Animation Projects</a>
-                            </li>
-                            <!-- <li class="breadcrumb-item active">Basic</li> -->
-                        </ol>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Animation Projects</h4>
-                                <!-- <p class="text-muted m-b-15 f-s-12">Use the input classes on an
+        <!-- #/ nk nav scroll -->
+      </div>
+      <!-- #/ sidebar -->
+      <!-- content body -->
+      <div class="content-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete"
+                >
+                  Delete Animation project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="delete"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Delete Animation project
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="form2">
+                  <label>Choose The Client</label>
+                  <div class="input-group">
+                    <select
+                      class="custom-select"
+                      id="clients"
+                      name="clientName"
+                    >
+                      <option selected="selected">Choose...</option>
+                      <option value="1">One</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="s" class="btn btn-danger">Delete!</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /Modal -->
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Animation Projects</h4>
+                  <!-- <p class="text-muted m-b-15 f-s-12">Use the input classes on an
                                     <code>.input-default, input-flat, .input-rounded</code> for Default input.</p> -->
-                                <div class="basic-form">
-                                    <form>
-                                        <label>Choose The Client</label>
-                                        <div class="input-group mb-3">
-                                            <select class="custom-select" id="clients" name="clientName">
-                                                <option selected="selected">Choose...</option>
-                                                <option value="1">One</option>
+                  <div class="basic-form">
+                    <form id="form1">
+                      <label>Choose The Client</label>
+                      <div class="input-group mb-3">
+                        <select
+                          class="custom-select"
+                          id="clients"
+                          name="clientName"
+                        >
+                          <option selected="selected">Choose...</option>
+                          <option value="1">One</option>
+                        </select>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-primary newbutton"
+                        onclick="addInput()"
+                      >
+                        Add Another Video
+                      </button>
+                      <label>Enter Video URL</label>
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-sm"
+                          type="text"
+                          name="animationUrl"
+                          placeholder="Enter Video URL"
+                        />
+                      </div>
 
-                                            </select>
-                                        </div>
-                                        <button type="button" class="btn btn-primary newbutton" onclick="addInput()">Add
-                                            Another Video</button>
-                                        <label>Enter Video URL</label>
-                                        <div class="form-group">
-                                            <input class="form-control form-control-sm" type="text" name="animationUrl" placeholder="Enter Video URL">
-                                        </div>
-                                        
-
-                                        <button type="submit" class="btn btn-dark">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                      <button type="submit" class="btn btn-dark">Submit</button>
+                    </form>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- #/ content body -->
-        <!-- footer -->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; <a href="#">KHP Marketing Agency</a> 2023</p>
-            </div>
+      </div>
+      <!-- #/ content body -->
+      <!-- footer -->
+      <div class="footer">
+        <div class="copyright">
+          <p>Copyright &copy; <a href="#">KHP Marketing Agency</a> 2023</p>
         </div>
-        <!-- #/ footer -->
+      </div>
+      <!-- #/ footer -->
     </div>
     <!-- Common JS -->
     <script src="../../assets/plugins/common/common.min.js"></script>
     <!-- Custom script -->
     <script src="../js/custom.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="../js/animation.js"></script>
-
-
-</body>
-
+  </body>
 </html>

@@ -38,4 +38,14 @@ app.post("/addAnimation", async (req, res, next) => {
   }
 });
 
+app.delete("/deleteAnimation", async (req, res) => {
+  console.log(req.body.clientName);
+  if (req.body.clientName !== undefined || req.body.clientName !== "") {
+    // await animationModel.deleteOne({ name: req.body.clientName });
+    res.json({ message: `Animation project for client ${req.body.clientName} deleted successfully` });
+  } else {
+    res.json({ message: "Choose a client!" });
+  }
+})
+
 module.exports = app;

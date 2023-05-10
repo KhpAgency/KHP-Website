@@ -11,10 +11,10 @@ app.get("/clients", async (req, res) => {
   }
 });
 
-app.get('/client', async (req, res) => {
-  let client = await clientModel.findOne({name: req.headers.name})
+app.get("/client", async (req, res) => {
+  let client = await clientModel.findOne({ name: req.headers.name });
   res.json(client);
-})
+});
 
 app.post("/addClient", addClientMiddleware, async (req, res, next) => {
   let data = await clientModel.findOne({ name: req.body.clientName });
@@ -30,6 +30,16 @@ app.post("/addClient", addClientMiddleware, async (req, res, next) => {
     res.json({ message: "client name already exists" });
   }
   next();
+});
+
+app.delete("/deleteClient", async (req, res) => {
+  console.log(req.body.clientName);
+  if (req.body.clientName !== undefined) {
+    await clientModel.deleteOne({ name: req.body.clientName });
+    res.json({ message: "Client deleted successfully" });
+  } else {
+    res.json({ message: "Choose a client to delete!" });
+  }
 });
 
 module.exports = app;

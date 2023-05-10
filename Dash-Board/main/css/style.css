@@ -127,6 +127,10 @@ Table of Contents
 @import "../../assets/plugins/animate/animate.css";
 @import "../../assets/plugins/metismenu/css/metisMenu.min.css";
 
+.modal{
+  top: 10%;
+}
+
 * {
   outline: none;
 }
