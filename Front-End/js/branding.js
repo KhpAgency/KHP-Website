@@ -136,7 +136,7 @@ async function getbranding() {
 		  <div style="display: flex;place-content: center;" class="wow fadeInLeft">
 			<div class="row">
 			${item.branding.map(items=>`<div class="col-md-12" style="display: flex;place-content: center;">
-			<img src="${url}${items.path.replace("uploads\\", "")}" alt="" style="width: 90%;">
+			<img src="${url}projects\\${items.filename}" alt="" style="width: 90%;">
 		  </div>`)}
 			  
 			</div>
@@ -149,7 +149,7 @@ async function getbranding() {
 		  <div style="display: flex;place-content: center;" class="wow fadeInLeft">
 		  <div class="row">
 		  ${item.profile.map(items=>`<div class="col-md-12" style="display: flex;place-content: center;">
-		  <img src="${url}${items.path.replace("uploads\\", "")}" alt="" style="width: 90%;">
+		  <img src="${url}project\\${items.filename}" alt="" style="width: 90%;">
 		</div>`)}
 			
 		  </div>

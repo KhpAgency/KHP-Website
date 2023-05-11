@@ -1,5 +1,5 @@
 // Use axios to fetch data from the API
-let { data } = await axios.get(`${url}allProjects`);
+let { data } = axios.get(`${url}allProjects`);
 
 function showdiv() {
     data.map(item=>{
