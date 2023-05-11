@@ -1,5 +1,5 @@
+let url = 'https://khp-api.onrender.com/';
 async function getclients() {
-  let url = 'https://khp-api.onrender.com/';
 
   let { data } = await axios.get(`${url}clients`);
 
@@ -12,7 +12,7 @@ getclients();
 
 
 
-const form = document.querySelector("form");
+const form = document.getElementById("form1");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   collectFormData();
@@ -63,25 +63,55 @@ function collectFormData() {
     });
 }
 
-//   <img data-aos="fade-down" data-aos-duration="500" style="margin-top: 80px;" src="images/clients/safwa1.png" alt=""
-//   class="cscale2">
 
-// <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="500"
-//   class="bodyy swiper-container mySwiper width90" style="width: 60%;margin-top: 40px;">
-//   <div class="swiper-wrapper">
-//     <div class="swiper-slide">
-//       <img class="lazyload" data-src="images/visual/3D/elsafwa/El Safwa-01.jpg" alt="">
-//     </div>
-//     <div class="swiper-slide">
-//       <iframe width="950" height="490"
-//         src="https://www.youtube.com/embed/T4kkoCMyCCY?loop=1&controls=1&autoplay=0&mute=1"
-//         title="YouTube video player" frameborder="0"
-//         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-//         allowfullscreen></iframe>
-//     </div>
+const form2 = document.getElementById("form2");
+form2.addEventListener("submit", function (event) {
+  // console.log("test");
+  event.preventDefault();
+  collectForm2Data();
+});
+  
+function collectForm2Data() {
+  const formData = new FormData(form2);
+  const options = {
+    method: "delete",
+    url: `${url}delete3d`,
+    data: new URLSearchParams(formData),
+  };
+  
+  axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
 
-//   </div>
-//   <div class="swiper-button-next arrows"></div>
-//   <div class="swiper-button-prev arrows"></div>
-//   <div class="swiper-pagination"></div>
-// </div>
+      
+      if (response.data.message=="Client deleted successfully") {
+        Toastify({
+          text: response.data.message,
+          className: "info",
+          style: {
+            background: "red",
+          }
+        }).showToast(); 
+        clearForm()
+      } else {
+
+        // to show error message in toast
+        Toastify({
+          text: response.data.message ,
+          className: "info",
+          style: {
+            background: "orange",
+            borderRadius: "5px",
+          }
+        }).showToast();
+      }
+
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
+
+    
+  }
