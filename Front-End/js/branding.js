@@ -1,8 +1,8 @@
 // Define the URL for the API
-let url = 'https://khp-api.onrender.com/';
 
 // Define an async function to get the branding data and display the carousel
 async function getbranding() {
+	let url = 'https://khp-api.onrender.com/';
 	// Use axios to fetch data from the API
 	let { data } = await axios.get(`${url}allProjects`);
 	console.log(data);
@@ -91,7 +91,16 @@ async function getbranding() {
 		  <div class="client_quote_card">
 			<a title="${item.clientName} project" href="#div${item.clientName}">
 			  <img class="coverimg cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="${item.clientName}"
-				onclick="if (!('ontouchstart' in window)) { showdiv() }">
+				onclick="function showclients() {
+					const div = document.getElementById(div${item.clientName});
+					if (div.className == "dnone") {
+						div.className = "show";
+					} else {
+						if (div.className == "show") {
+							div.className = "dnone";
+						}
+					}
+				}()">
 			</a>
 		  </div>
 		</li>`).join("")}
@@ -119,13 +128,13 @@ async function getbranding() {
 		  <div class="col-md-6 centerdiv">
 			<p class="text-center titles newfont">Branding</p>
 			<a title="${item.clientName} branding" href="#div${item.clientName}1">
-			  <img class="coverimg2 cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="" onclick="show${item.clientName}1(),showprojects()">
+			  <img class="coverimg2 cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="" onclick="show${item.clientName}1();showprojects();">
 			</a>
 		  </div>
 		  <div class="col-md-6 centerdiv">
 			<p class="text-center titles newfont">Profile</p>
 			<a title="${item.clientName} profile" href="#div${item.clientName}2">
-			  <img class="coverimg2 cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="" onclick="show${item.clientName}2(),showprojects()">
+			  <img class="coverimg2 cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="" onclick="show${item.clientName}2();showprojects();">
 			</a>
 		  </div>
 		</div>
@@ -135,8 +144,8 @@ async function getbranding() {
 		  <p class="project-detail-text text-center titles newfont">Branding</p>
 		  <div style="display: flex;place-content: center;" class="wow fadeInLeft">
 			<div class="row">
-			${item.branding.map(items=>`<div class="col-md-12" style="display: flex;place-content: center;">
-			<img src="${url}projects\\${items.filename}" alt="" style="width: 90%;">
+			${item.branding.map((items) =>`<div class="col-md-12" style="display: flex;place-content: center;">
+			<img src="${url}${(items.path.replace("uploads\\", ""))}" alt="" style="width: 90%;">
 		  </div>`)}
 			  
 			</div>
@@ -148,8 +157,8 @@ async function getbranding() {
 		  <p class="project-detail-text text-center titles newfont">Profile</p>
 		  <div style="display: flex;place-content: center;" class="wow fadeInLeft">
 		  <div class="row">
-		  ${item.profile.map(items=>`<div class="col-md-12" style="display: flex;place-content: center;">
-		  <img src="${url}project\\${items.filename}" alt="" style="width: 90%;">
+		  ${item.profile.map((items) =>`<div class="col-md-12" style="display: flex;place-content: center;">
+		  <img src="${url}${(items.path.replace("uploads\\", ""))}" alt="" style="width: 90%;">
 		</div>`)}
 			
 		  </div>
@@ -164,7 +173,7 @@ async function getbranding() {
 
 
       <!-- covers carousel 2-->
-      <div class="our_happy_clients position-relative overflow-hidden" id="projects2">
+      <div class="our_happy_clients position-relative overflow-hidden dnone" id="projects2">
   <div class="container">
 	<div class="our_happy_clients_content">
 	  <div class="splide client-slider" aria-label="Our happy Clients">
@@ -200,30 +209,28 @@ async function getbranding() {
 		</div>
 		<div class="splide__track">
 		  <ul class="splide__list transform">
-		  ${data.map(item =>
-			`<li class="splide__slide slidewidth centercover">
-		  <div class="client_quote_card">
-			<a title="${item.clientName} project" href="#div${item.clientName}">
-			  <img class="coverimg cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="${item.clientName}"
-				onclick="if (!('ontouchstart' in window)) { showdiv() }">
-			</a>
-		  </div>
-		</li>`).join("")}
+		  <div id="listItem">
+			${data.map(item =>
+				`<li class="splide__slide slidewidth centercover">
+			<div class="client_quote_card">
+				<a title="${item.clientName} project" href="#div${item.clientName}">
+				<img class="coverimg cursor" src="${url}${(item.clientID.cover.replace("uploads\\", ""))}" alt="${item.clientName}"
+					onclick="(function showclients(){
+
+						const div = document.getElementById('div${item.clientName}');
+						div.classList = 'show';
+					})()">
+				</a>
+			</div>
+			</li>`).join("")}
+		</div>
 			
 		  </ul>
 		</div>
 	  </div>
 	</div>
   </div>
-</div> 
-
-<script>${async function showdiv() {
-	await	data.map(item=>{
-			const divapi = document.getElementById(`div${item.clientName}`)
-		divapi.className = "show";
-	
-		})}
-	}</script>`
+</div> `
 	
 	document.getElementById("myBtnContainer").innerHTML = clients;
 
