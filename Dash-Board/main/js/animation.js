@@ -7,8 +7,8 @@ function addInput() {
   var formGroup = document.createElement("div");
   formGroup.className = "form-group";
   formGroup.appendChild(newInput);
-  var submitButton = document.querySelector("button[type=submit]");
-  var formElement = document.querySelector("form");
+  var submitButton = document.querySelector("#btn1");
+  var formElement = document.querySelector("#form1");
   formElement.insertBefore(formGroup, submitButton);
   formElement.insertBefore(submitButton, formGroup.nextSibling.nextSibling);
 }
@@ -18,13 +18,11 @@ async function getclients() {
   let { data } = await axios.get(`${url}clients`);
 
   let names = `<option disabled selected="selected">Choose...</option>
-  ${data
-    .map(
-      (item) =>
+  ${data.map((item) =>
         `<option value='${item.name}' id="option"> ${item.name} </option>`
-    )
-    .join("")}`;
+    ).join("")}`;
   document.getElementById("clients").innerHTML = names;
+  document.getElementById("clients2").innerHTML = names;
 }
 getclients();
 

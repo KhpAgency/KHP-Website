@@ -1,12 +1,14 @@
 let url = 'https://khp-api.onrender.com/';
+
 async function getclients() {
 
   let { data } = await axios.get(`${url}clients`);
 
-  let names = data.map(
-    (item) => `<option value='${item.name}' id="option"> ${item.name} </option>`
-  );
+  let names = `<option disabled selected="selected">Choose...</option>
+  ${data.map((item) => `<option value='${item.name}' id="option"> ${item.name} </option>`
+  ).join("")}`;
   document.getElementById("clients").innerHTML = names;
+  document.getElementById("clients2").innerHTML = names;
 }
 getclients();
 
@@ -66,11 +68,10 @@ function collectFormData() {
 
 const form2 = document.getElementById("form2");
 form2.addEventListener("submit", function (event) {
-  // console.log("test");
   event.preventDefault();
   collectForm2Data();
 });
-  
+
 function collectForm2Data() {
   const formData = new FormData(form2);
   const options = {
@@ -78,40 +79,35 @@ function collectForm2Data() {
     url: `${url}delete3d`,
     data: new URLSearchParams(formData),
   };
-  
+
   axios
     .request(options)
     .then(function (response) {
       console.log(response.data);
 
-      
-      if (response.data.message=="Client deleted successfully") {
+      if (response.data.message !== "Choose a client!") {
         Toastify({
           text: response.data.message,
           className: "info",
           style: {
             background: "red",
-          }
-        }).showToast(); 
-        clearForm()
+          },
+        }).showToast();
+        clearForm();
       } else {
-
         // to show error message in toast
         Toastify({
-          text: response.data.message ,
+          text: response.data.message,
           className: "info",
           style: {
             background: "orange",
             borderRadius: "5px",
-          }
+          },
         }).showToast();
       }
-
     })
     .catch(function (error) {
       console.error(error);
     });
+}
 
-
-    
-  }

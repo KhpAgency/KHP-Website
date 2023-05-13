@@ -3,13 +3,14 @@ const clientModel = require("../model/client.model");
 const fourDmodel = require("../model/4d.model");
 const add4dMiddleware = require("../middleware/add4d.middleware");
 
-app.get('/all4d', async (req, res) => {
-  let data = await fourDmodel.find().populate('clientID');
+app.get("/all4d", async (req, res) => {
+  let data = await fourDmodel.find().populate("clientID");
   if (data.length != 0) {
     res.json(data);
   } else {
-    res.json({message:"No 4D projects found"});
-  }});
+    res.json({ message: "No 4D projects found" });
+  }
+});
 
 app.post("/add4d", add4dMiddleware, async (req, res, next) => {
   let client = await clientModel.findOne({ name: req.body.clientName });
@@ -25,7 +26,7 @@ app.post("/add4d", add4dMiddleware, async (req, res, next) => {
     } else {
       let fourDproject = await fourDmodel.insertMany({
         name: clientName,
-        clientID:id,
+        clientID: id,
         fourDphotos,
         videoLink,
       });
@@ -34,6 +35,22 @@ app.post("/add4d", add4dMiddleware, async (req, res, next) => {
     next();
   } else {
     res.json({ message: "No client found" });
+  }
+});
+
+app.delete("/delete4d", async (req, res) => {
+  if (
+    req.body.clientName == undefined ||
+    req.body.clientName == "undefined" ||
+    req.body.clientName == ""
+  ) {
+    res.json({ message: "Choose a client!" });
+  } else {
+    await fourDmodel.deleteOne({ name: req.body.clientName });
+
+    res.json({
+      message: `media production project for client ${req.body.clientName} deleted successfully`,
+    });
   }
 });
 

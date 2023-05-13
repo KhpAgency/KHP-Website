@@ -39,15 +39,18 @@ app.post("/add3d", add3dMiddleware, async (req, res, next) => {
 });
 
 app.delete("/delete3d", async (req, res) => {
-  let name = req.body.clientName;
-  if (req.body.clientName !== undefined) {
-    // await threeDmodel.deleteOne({ name });
-
-
-    res.json({ message: "Client deleted successfully" });
+  if (
+    req.body.clientName == undefined ||
+    req.body.clientName == "undefined" ||
+    req.body.clientName == ""
+  ) {
+    res.json({ message: "Choose a client!" });
   } else {
-    res.json({ message: "Choose a client to delete!" });
-  }
-});
+    await threeDmodel.deleteOne({ name: req.body.clientName });
 
+    res.json({
+      message: `media production project for client ${req.body.clientName} deleted successfully`,
+    });
+  }
+})
 module.exports = app;

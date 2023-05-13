@@ -2,12 +2,12 @@ const app = require("express").Router();
 const clientModel = require("../model/client.model");
 const animationModel = require("../model/animation.model");
 
-app.get('/allAnimation', async (req, res) => {
-  let data = await animationModel.find().populate('clientID');
+app.get("/allAnimation", async (req, res) => {
+  let data = await animationModel.find().populate("clientID");
   if (data.length != 0) {
     res.json(data);
   } else {
-    res.json({message:"No Animation projects found"});
+    res.json({ message: "No Animation projects found" });
   }
 });
 
@@ -39,13 +39,19 @@ app.post("/addAnimation", async (req, res, next) => {
 });
 
 app.delete("/deleteAnimation", async (req, res) => {
-  console.log(req.body.clientName);
-  if (req.body.clientName !== undefined || req.body.clientName !== "") {
-    // await animationModel.deleteOne({ name: req.body.clientName });
-    res.json({ message: `Animation project for client ${req.body.clientName} deleted successfully` });
-  } else {
+  if (
+    req.body.clientName == undefined ||
+    req.body.clientName == "undefined" ||
+    req.body.clientName == ""
+  ) {
     res.json({ message: "Choose a client!" });
+  } else {
+    await websiteModel.deleteOne({ name: req.body.clientName });
+
+    res.json({
+      message: `media production project for client ${req.body.clientName} deleted successfully`,
+    });
   }
-})
+});
 
 module.exports = app;

@@ -38,4 +38,20 @@ app.post("/addEvents", async (req, res, next) => {
   }
 });
 
+app.delete("/deleteEvents", async (req, res) => {
+  if (
+    req.body.clientName == undefined ||
+    req.body.clientName == "undefined" ||
+    req.body.clientName == ""
+  ) {
+    res.json({ message: "Choose a client!" });
+  } else {
+    await eventsModel.deleteOne({ name: req.body.clientName });
+
+    res.json({
+      message: `media production project for client ${req.body.clientName} deleted successfully`,
+    });
+  }
+});
+
 module.exports = app;

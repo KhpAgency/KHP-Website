@@ -4,7 +4,7 @@ const websiteModel = require("../model/website.model");
 const websiteMiddleware = require("../middleware/website.middleware");
 
 app.get("/allWebsites", async (req, res) => {
-  let data = await websiteModel.find().populate('clientID');
+  let data = await websiteModel.find().populate("clientID");
   // console.log(data.length);
   if (data.length != 0) {
     res.json(data);
@@ -35,6 +35,22 @@ app.post("/addWebsite", websiteMiddleware, async (req, res, next) => {
     next();
   } else {
     res.json({ message: "No client found" });
+  }
+});
+
+app.delete("/deleteWebsite", async (req, res) => {
+  if (
+    req.body.clientName == undefined ||
+    req.body.clientName == "undefined" ||
+    req.body.clientName == ""
+  ) {
+    res.json({ message: "Choose a client!" });
+  } else {
+    await websiteModel.deleteOne({ name: req.body.clientName });
+
+    res.json({
+      message: `media production project for client ${req.body.clientName} deleted successfully`,
+    });
   }
 });
 
