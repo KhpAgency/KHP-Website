@@ -115,10 +115,6 @@ async function getbranding() {
 
 
 
-
-
-
-
 <!-- branding and profile covers -->
       <div id="clientproject" class="container mrgbottom100">
         <!-- api -->
