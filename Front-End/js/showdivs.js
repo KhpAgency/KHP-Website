@@ -63,6 +63,10 @@
 //         div.className = "show";
 // }
 
+function showdiv() {
+	const divapi = document.getElementById("divapi");
+	divapi.className = "show"
+}
 
 function showprojects() {
     const projects1 = document.getElementById("projects1");
