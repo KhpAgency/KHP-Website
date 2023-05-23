@@ -54,7 +54,6 @@
 // }
 
 
-
 // async function showdiv(name) {
 //     let url = 'https://khp-api.onrender.com/';
 //     let response = await axios.get(`${url}allProjects`);
