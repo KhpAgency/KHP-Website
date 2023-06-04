@@ -2076,6 +2076,14 @@ a.brand:focus {
   text-decoration: none;
 }
 
+.carousel-item{
+  /* display: grid; */
+  /* place-content: center; */
+  float: none;
+  /* margin-right: 0px; */
+  /* text-align: center; */
+  margin-right: 20%;
+}
 
 
 /* 3.2 Section Specialization */
